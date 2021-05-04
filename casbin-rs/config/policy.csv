@@ -1,0 +1,6 @@
+p, user, user_role, GET
+p, admin, admin_role, GET
+g, user, user_role
+g, admin, admin_role
+g2, /allowed, user_role
+g2, /denied, admin_role

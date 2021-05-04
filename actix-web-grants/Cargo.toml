@@ -1,0 +1,20 @@
+[package]
+name = "actix-web-grants-example"
+version = "0.1.0"
+authors = ["DDtKey <ddttkey@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "3.0"
+actix-web-grants = "2.0"
+
+[dev-dependencies]
+assert_cmd = "0.12.0"
+criterion = { version = "0.3.4", features = ["async_tokio"] }
+tokio = { version = "1.5.0" }
+
+[[bench]]
+name = "endpoints"
+harness = false

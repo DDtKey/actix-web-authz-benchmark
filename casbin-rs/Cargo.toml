@@ -1,0 +1,22 @@
+[package]
+name = "casbin-rs-example"
+version = "0.1.0"
+authors = ["DDtKey <ddttkey@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "3.0"
+actix-casbin = "0.4.2"
+actix-casbin-auth = "0.4.4"
+futures = "0.3.14"
+
+[dev-dependencies]
+assert_cmd = "0.12.0"
+criterion = { version = "0.3.4", features = ["async_tokio"] }
+tokio = { version = "1.5.0" }
+
+[[bench]]
+name = "endpoints"
+harness = false
