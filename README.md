@@ -2,6 +2,13 @@
 
 Benchmarks are written using [`criterion`] and are located in this repository.
 
+##### How to run benchmarks
+1. Clone the `actix-web-authz-benchmark` repository
+2. Run the command in the root of project directory
+```shell
+cargo bench
+```
+
 #### Table of benchmark results
 
 <table>
@@ -38,8 +45,8 @@ Benchmarks are written using [`criterion`] and are located in this repository.
     </tr>
 </table>
 
-> CPU: 2,6 GHz 6-Core Intel Core i7; RAM: 16 GB
+> rustc: v1.51.0 (stable); CPU: 2,6 GHz 6-Core Intel Core i7; RAM: 16 GB
 
 [`actix-web-grants`]: https://github.com/DDtKey/actix-web-grants
-[`casbin-rs`]: https://github.com/casbin/casbin-rs
+[`casbin-rs`]: https://github.com/casbin-rs/actix-casbin-auth
 [`criterion`]: https://github.com/bheisler/criterion.rs
