@@ -43,7 +43,7 @@ fn bench_denied_endpoint(c: &mut Criterion) {
                 App::new()
                     .wrap(casbin_middleware.clone())
                     .wrap(FakeAuth)
-                    .service(allowed_endpoint),
+                    .service(denied_endpoint),
             )
             .await;
 
