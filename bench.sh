@@ -1,5 +1,5 @@
 #!/bin/sh
-#set -e
+set -e
 
 HOST="http://localhost:8081"
 ALLOWED_ENDPOINT="${HOST}/allowed"
