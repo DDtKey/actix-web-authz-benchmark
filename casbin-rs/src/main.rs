@@ -19,9 +19,9 @@ async fn denied_endpoint() -> HttpResponse {
 #[actix_web::main]
 // Sample application with grant protection based on extracting by your custom function
 async fn main() -> Result<()> {
-    let m = DefaultModel::from_file("config/model.conf").await.unwrap();
+    let m = DefaultModel::from_file("casbin-rs/config/model.conf").await.unwrap();
     //You can also use diesel-adapter or sqlx-adapter
-    let a = FileAdapter::new("config/policy.csv");
+    let a = FileAdapter::new("casbin-rs/config/policy.csv");
 
     let casbin_middleware = CasbinService::new(m, a).await?;
 
