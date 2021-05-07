@@ -1,12 +1,13 @@
 ### Minimal examples of using [`casbin-rs`] and [`actix-web-grants`] and performance comparisons
 
-Benchmarks are written using [`criterion`] and are located in this repository.
+The [`wrk`] tool was used for benchmarks (all commands used can be found in `bench.sh`)
 
 ##### How to run benchmarks
-1. Clone the `actix-web-authz-benchmark` repository
-2. Run the command in the root of project directory
+1. To run you need [`cargo`] and [`wrk`] installed
+2. Clone the `actix-web-authz-benchmark` repository
+3. Run the shell script `bench.sh` in the root of project directory
 ```shell
-cargo bench
+sh bench.sh
 ```
 
 #### Table of benchmark results
@@ -14,39 +15,34 @@ cargo bench
 <table>
     <tr>
       <td rowspan="2">Benchmark</td>
-      <td colspan="3"><b>actix-web-grants</b></td>
-      <td colspan="3"><b>casbin-rs</b></td>
+      <td colspan="2"><b>actix-web-grants</b></td>
+      <td colspan="2"><b>casbin-rs</b></td>
     </tr>
     <tr>
-      <td>Min</td>
-      <td>Mean</td>
-      <td>Max</td>
-      <td>Min</td>
-      <td>Mean</td>
-      <td>Max</td>
+      <td>Latency</td>
+      <td>Req/Sec</td>
+      <td>Latency</td>
+      <td>Req/Sec</td>
     </tr>
     <tr>
       <td>Allowed Endpoint</td>
-      <td>12.157 us</td>
-      <td>12.433 us</td>
-      <td>12.736 us</td>
-      <td>354.85 us</td>
-      <td>363.26 us</td>
-      <td>373.44 us</td>
+      <td>4.41 ms </td>
+      <td>22.69k </td>
+      <td>6.18 ms </td>
+      <td>16.27k</td>
     </tr>
     <tr>
       <td>Denied Endpoint</td>
-      <td>11.165 us</td>
-      <td>11.239 us</td>
-      <td>11.317 us</td>
-      <td>304.16 us</td>
-      <td>324.52 us</td>
-      <td>350.22 us</td>
+      <td>4.94 ms</td>
+      <td>20.23k</td>
+      <td>6.70 ms</td>
+      <td>14.98k</td>
     </tr>
 </table>
 
-> rustc: v1.51.0 (stable); CPU: 2,6 GHz 6-Core Intel Core i7; RAM: 16 GB
+> rustc: v1.52.0 (stable); CPU: 2,6 GHz 6-Core Intel Core i7; RAM: 16 GB
 
 [`actix-web-grants`]: https://github.com/DDtKey/actix-web-grants
 [`casbin-rs`]: https://github.com/casbin-rs/actix-casbin-auth
-[`criterion`]: https://github.com/bheisler/criterion.rs
+[`wrk`]: https://github.com/wg/wrk
+[`cargo`]: https://doc.rust-lang.org/stable/cargo/getting-started/installation.html
