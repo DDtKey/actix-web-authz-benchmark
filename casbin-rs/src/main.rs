@@ -30,7 +30,6 @@ async fn main() -> Result<()> {
         .await
         .get_role_manager()
         .write()
-        .unwrap()
         .matching_fn(Some(key_match2), None);
 
     HttpServer::new(move || {
